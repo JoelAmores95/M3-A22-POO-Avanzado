@@ -44,12 +44,6 @@ public class Mago extends Personaje {
         
     }
 
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
     // Getters y Setters
     public int getPuntosMagia() {
         return puntosMagia;

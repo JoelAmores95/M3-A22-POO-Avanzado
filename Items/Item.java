@@ -1,6 +1,6 @@
 package Items;
 
-public abstract class Item {
+public class Item {
 
   // Propiedades
   private String nombre;
@@ -8,13 +8,17 @@ public abstract class Item {
   private int valor;
 
   // Constructor
-  public Item(String nombre, int peso, int valor) {
+  public Item(String nombre, double peso, int valor) {
     this.nombre = nombre;
     this.peso = peso;
     this.valor = valor;
   }
 
   // Métodos
+  public String toString(){
+    return "Nombre: " + getNombre() +"\nPeso: " + getPeso() + "\nValor: " +getValor(); 
+  }
+  
   public String getNombre() {
     return nombre;
   }

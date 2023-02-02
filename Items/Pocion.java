@@ -7,7 +7,7 @@ public class Pocion extends Item {
     private int efecto;
 
     // Constructor
-    public Pocion(String nombre, int peso, int valor, String descripcion, int efecto) {
+    public Pocion(String nombre, double peso, int valor, String descripcion, int efecto) {
         super(nombre, peso, valor);
         this.descripcion = descripcion;
         this.efecto = efecto;

@@ -5,7 +5,7 @@ public class Arma extends Item{
     private int pa;
     private String tipo;
 
-    public Arma(String nombre, int peso, int valor, int pa, String tipo) {
+    public Arma(String nombre, double peso, int valor, int pa, String tipo) {
         super(nombre, peso, valor);
         this.pa = pa;
         this.tipo = tipo;
