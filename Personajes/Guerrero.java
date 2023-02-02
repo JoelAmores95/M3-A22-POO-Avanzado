@@ -38,12 +38,6 @@ public class Guerrero extends Personaje{
         
     }
 
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
     public double getPesoMaximo() {
         return pesoMaximo;
     }
