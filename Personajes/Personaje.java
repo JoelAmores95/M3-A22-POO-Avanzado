@@ -3,11 +3,11 @@ package Personajes;
 import java.util.ArrayList;
 import Items.Item;
 
-public abstract class Personaje {
+public abstract class Personaje implements AccionesPersonaje {
 
     // Propiedades
     private String nombre;
-    private int edad;
+    private int edad; 
     private int fuerza;
     private int puntosVida;
     private ArrayList<Item> equipo;

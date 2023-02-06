@@ -37,6 +37,7 @@ public class Programa {
         ArrayList<Item> equipoMago2 = new ArrayList<Item>();
         equipoMago1.add(anilloDeRubi);
         equipoMago1.add(hidromiel);
+        equipoMago1.add(varita);
         
         Mago benalisses = new Mago("Benalisses", 90, 3, 18, equipoMago1, 26, 12);
         Mago pedralba = new Mago("Pedralba", 120, 4, 15, equipoMago2, 21, 9);
@@ -54,8 +55,15 @@ public class Programa {
         Guerrero argelaga = new Guerrero("Argelaga", 35, 12, 20, equipoGuerrero1, 120);
         Guerrero matoll = new Guerrero("Matoll",  42, 15, 22, equipoGuerrero2, 112);
 
-        System.out.println(argelaga.toString());
-        System.out.println(matoll.toString());
+        // System.out.println(argelaga.toString());
+        // System.out.println(matoll.toString());
 
+        // Ataques
+        // Melee
+        matoll.atacar(argelaga);
+        // Distancia
+        argelaga.atacar(matoll);
+        // Mágico
+        benalisses.atacar(matoll);
     }
 }
