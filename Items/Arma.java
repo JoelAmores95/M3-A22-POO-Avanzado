@@ -1,6 +1,6 @@
 package Items;
 
-public class Arma extends Item{
+public class Arma extends Item {
 
     private int pa;
     private String tipo;

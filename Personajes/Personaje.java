@@ -2,6 +2,7 @@ package Personajes;
 
 import java.util.ArrayList;
 import Items.Item;
+import Items.Pocion;
 
 public abstract class Personaje implements AccionesPersonaje {
 
@@ -22,10 +23,47 @@ public abstract class Personaje implements AccionesPersonaje {
     }
 
     // Métodos
-    public abstract void atacar(Personaje personaje);
-    public abstract boolean equipar(Item item);
-    public abstract void beber();
-    public abstract void mostrarEquipo();
+    
+    public abstract void atacar(Personaje personaje); // Abstracto, funciona diferente en cada personaje
+
+    public boolean equipar(Item item){
+        boolean hayEspacio = false;
+        if(this.getEquipo().size() <10){
+            hayEspacio = true;
+            this.getEquipo().add(item);
+        } else {
+            hayEspacio = false;
+            System.out.println("No hay espacio, no se puede añadir " + item.getNombre());
+        }
+        return hayEspacio;
+    };
+
+    public void beber(){
+        boolean itemConsumido = false;
+        // Recorrer equipo
+        for(int i = 0; i < this.getEquipo().size(); i++){
+            if(this.getEquipo().get(i).getClass().getName().equals(Pocion.class.getName())){
+                // Hay poción -> la quito
+                this.getEquipo().remove(i);
+
+                // Modifico la vida del personaje
+                Pocion pocion = (Pocion) this.getEquipo().get(i);
+                this.puntosVida += pocion.getEfecto();
+                
+                // Evito el mensaje de error y salgo del bucle
+                itemConsumido = true;
+                break;
+            }
+            
+        }
+
+        if(!itemConsumido){
+            System.out.println("No hay consumibles.");
+        }
+    };
+    public void mostrarEquipo(){
+        System.out.println(this.getEquipo().toString());
+    };
 
     public String toString(){
         return "Nombre: " + getNombre() + "\nFuerza: "+ getFuerza() + "\nEdad: " + getEdad();

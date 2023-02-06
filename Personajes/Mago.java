@@ -25,36 +25,22 @@ public class Mago extends Personaje {
     public void atacar(Personaje atacado) {
         boolean ataca = false;
         for (int i = 0; i < this.getEquipo().size(); i++) {
+
             // Miro que el item sea un arma
             if (this.getEquipo().get(i).getClass().getName().equals(Arma.class.getName())) {
                 Arma arma = (Arma) this.getEquipo().get(i);
-                // System.out.println(arma.getTipo());
-                System.out.println(
-                        this.getNombre() + " causa " + arma.getPA() + " puntos de daño a " + atacado.getNombre());
-                ataca = true;
+
+                // El arma debe ser mágica
+                if (arma.getTipo().equals("Mágica")) {
+                    System.out.println(
+                            this.getNombre() + " causa " + arma.getPA() + " puntos de daño a " + atacado.getNombre());
+                    ataca = true;
+                }
             }
         }
         if (!ataca) {
             System.out.println(this.getNombre() + " causa 0 puntos de daño a " + atacado.getNombre());
         }
-    }
-
-    @Override
-    public boolean equipar(Item item) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public void beber() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void mostrarEquipo() {
-        // TODO Auto-generated method stub
-
     }
 
     // Getters y Setters

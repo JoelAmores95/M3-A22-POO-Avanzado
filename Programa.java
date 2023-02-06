@@ -7,6 +7,10 @@ import Personajes.Guerrero;
 import Personajes.Mago;
 
 public class Programa {
+
+    public final static String ARMA_MELEE = "Melee";
+    public final static String ARMA_MAGIA = "Mágica";
+    public final static String ARMA_DISTANCIA = "Distancia";
     public static void main(String[]args) {
 
         // Creación de Items
@@ -17,9 +21,9 @@ public class Programa {
         // System.out.println(anilloDeRubi.toString());
 
         // Creación de Armas
-        Item espada = new Arma("Espada Larga", 3.1, 5000, 6, "Melee");
-        Item varita = new Arma("Varita mágica", 0.125, 3200, 3, "Mágico");
-        Item arco = new Arma("Arco de Marfil", 1, 2800, 2, "Distancia");
+        Item espada = new Arma("Espada Larga", 3.1, 5000, 6, ARMA_MELEE);
+        Item varita = new Arma("Varita mágica", 0.125, 3200, 3, ARMA_MAGIA);
+        Item arco = new Arma("Arco de Marfil", 1, 2800, 2, ARMA_DISTANCIA);
 
         // System.out.println(espada.toString());
         // System.out.println(varita.toString());
@@ -65,5 +69,16 @@ public class Programa {
         argelaga.atacar(matoll);
         // Mágico
         benalisses.atacar(matoll);
+        
+        // Saturar el equipo
+        for(int i = 0; i< matoll.getEquipo().size();i++){
+            matoll.equipar(veneno);
+        }
+        // Equipar
+        // matoll.mostrarEquipo();
+        System.out.println(matoll.getPuntosVida()); 
+        matoll.beber();
+        System.out.println(matoll.getPuntosVida()); 
+        
     }
 }

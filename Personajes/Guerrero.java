@@ -7,13 +7,17 @@ import Items.Item;
 
 public class Guerrero extends Personaje {
 
+    // Propiedades
     private double pesoMaximo;
 
+    // Constructor
     public Guerrero(String nombre, int edad, int fuerza, int puntosVida, ArrayList<Item> equipo, double pesoMaximo) {
         super(nombre, edad, fuerza, puntosVida, equipo);
 
         this.pesoMaximo = pesoMaximo;
     }
+
+    // Métodos
 
     @Override
     public void atacar(Personaje atacado) {
@@ -24,7 +28,7 @@ public class Guerrero extends Personaje {
             if (this.getEquipo().get(i).getClass().getName().equals(Arma.class.getName())) {
                 // Hay un arma
                 Arma arma = (Arma) this.getEquipo().get(i);
-                // Es melee
+                // Miro el tipo
                 String tipoArma = arma.getTipo();
                 String mensaje;
                 switch(tipoArma){
@@ -45,24 +49,6 @@ public class Guerrero extends Personaje {
         if (!ataca) {
             System.out.println(this.getNombre() + " causa 1 punto de daño a "+ atacado.getNombre() + "...");
         }
-    }
-
-    @Override
-    public boolean equipar(Item item) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public void beber() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void mostrarEquipo() {
-        // TODO Auto-generated method stub
-
     }
 
     public double getPesoMaximo() {
