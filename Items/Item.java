@@ -1,6 +1,6 @@
 package Items;
 
-public class Item {
+public class Item implements Comparable<Item> {
 
   // Propiedades
   private String nombre;
@@ -15,10 +15,10 @@ public class Item {
   }
 
   // Métodos
-  public String toString(){
-    return "Nombre: " + getNombre() +"\nPeso: " + getPeso() + "\nValor: " +getValor(); 
+  public String toString() {
+    return "\nNombre: " + getNombre() + "\nPeso: " + getPeso() + "\nValor: " + getValor() + "\n";
   }
-  
+
   public String getNombre() {
     return nombre;
   }
@@ -41,5 +41,18 @@ public class Item {
 
   public void setValor(int valor) {
     this.valor = valor;
+  }
+
+  @Override
+  public int compareTo(Item o) {
+    if (this.valor != o.valor) {
+      // De mayor a menor
+      return Integer.compare(o.valor, this.valor);
+    } else if (this.peso != o.peso) {
+      // De menor a mayor
+      return Double.compare(this.peso, o.peso);
+    } else {
+      return this.nombre.compareTo(o.nombre);
+    }
   }
 }

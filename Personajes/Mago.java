@@ -39,7 +39,7 @@ public class Mago extends Personaje {
             }
         }
         if (!ataca) {
-            System.out.println(this.getNombre() + " causa 0 puntos de daño a " + atacado.getNombre());
+            System.out.println(this.getNombre() + " causa 0 puntos de daño a " + atacado.getNombre() + "...");
         }
     }
 
